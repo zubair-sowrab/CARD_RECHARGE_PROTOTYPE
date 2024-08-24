@@ -1,0 +1,8 @@
+<!-- cards/templates/cards/request_new_card.html -->
+<h2>Request a New Card</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit Request</button>
+</form>
+<a href="{% url 'home' %}">Back to Home</a>

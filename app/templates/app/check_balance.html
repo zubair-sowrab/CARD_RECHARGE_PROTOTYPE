@@ -1,0 +1,17 @@
+<!-- cards/templates/cards/check_balance.html -->
+<h2>Check Card Balance</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label for="card_number">Card Number:</label>
+    <input type="text" name="card_number" id="card_number" required>
+    <button type="submit">Check Balance</button>
+</form>
+
+{% if card %}
+    <p>Card Number: {{ card.card_number }}</p>
+    <p>Balance: {{ card.balance }}</p>
+    <p>Expiry Date: {{ card.expiry_date }}</p>
+{% elif error %}
+    <p>{{ error }}</p>
+{% endif %}
+<a href="{% url 'home' %}">Back to Home</a>

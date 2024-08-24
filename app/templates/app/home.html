@@ -1,0 +1,14 @@
+<!-- cards/templates/cards/home.html -->
+
+<h1>Welcome to the Metro Card Management System</h1>
+<p>Use the links below to navigate through the system:</p>
+<ul>
+    <li><a href="{% url 'check_balance' %}">Check Balance</a></li>
+    <li><a href="{% url 'card_details' %}">Card Details</a></li>
+    <li><a href="{% url 'request_new_card' %}">Request New Card</a></li>
+    <li><a href="{% url 'recharge_card' %}">Recharge Card</a></li>
+</ul>
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>

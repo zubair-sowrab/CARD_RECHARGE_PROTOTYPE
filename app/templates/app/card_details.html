@@ -1,0 +1,33 @@
+<!-- app/templates/app/card_details.html -->
+
+
+{% block content %}
+<h2>Card Details for {{ card_holder.user.username }}</h2>
+
+{% if cards %}
+    <table>
+        <thead>
+            <tr>
+                <th>Card Number</th>
+                <th>Balance</th>
+                <th>Expiry Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for card in cards %}
+            <tr>
+                <td>{{ card.card_number }}</td>
+                <td>{{ card.balance }}</td>
+                <td>{{ card.expiry_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No cards found for this user.</p>
+{% endif %}
+
+
+<a href="{% url 'home' %}">Back to Home</a>
+
+{% endblock %}

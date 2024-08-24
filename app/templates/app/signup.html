@@ -1,0 +1,17 @@
+<!-- app/templates/app/signup.html -->
+
+
+{% block content %}
+<div class="container">
+  <h2>Sign Up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+  <p>Already have an account? <a href="{% url 'login' %}">Log in here</a>.</p>
+</div>
+{% endblock %}
+
+<a href="{% url 'login' %}">Already Have an Account? Login</a>
+

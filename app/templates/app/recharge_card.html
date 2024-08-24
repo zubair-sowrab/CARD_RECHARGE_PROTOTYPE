@@ -1,0 +1,12 @@
+<!-- cards/templates/cards/recharge_card.html -->
+<h2>Recharge Card</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Recharge</button>
+</form>
+
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
+<a href="{% url 'home' %}">Back to Home</a>
